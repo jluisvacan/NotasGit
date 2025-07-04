@@ -7,5 +7,41 @@
 </head>
 <body>
     
+    <head> 
+        <title> Curso Git</title>
+    </head>
+
+    <h1>Git</h1>
+
+    <h2>Core concepts</h2>
+    <h3>working directory</h3>
+    <p>Es la carpeta del proyecto donde el usuario edita directamente los archivos</p>
+
+    <ul>
+        <li>Contiene los archivos locales</li>
+        <li>Git detecta los cambios (modificaciones, archivos nuevos o eliminados)</li>
+        <li>No esta en el historial hasta que se realiza un <code>add</code> o un <code>commit</code></li>
+        
+    </ul>
+
+    <h3>staging area</h3>
+    <p>Es una lista temporal donde Git ubica los cambios que se quieren incluir en el proximo commit</p>
+
+    <ul>
+        <li>No se guardan los cambios, solo se preparan</li>
+        <li>Permite hacer commits selectivos</li>
+        <li>Se usa el comando <code> git add [nombre_de_archivo]</code></li>
+        
+    </ul>
+
+    <h3>repository</h3>
+    <p>Es donde Git almacena el historial de versiones del proyecto</p>
+
+    <ul>
+        <li>Se crea con <code>git init</code> (de manera local) o <code>git clone</code> (desde remoto)</li>
+        <li>Guarda todos los commits</li>
+        <li>Se puede conectar a un repositorio remoto</li>
+    </ul>
+
 </body>
 </html>
