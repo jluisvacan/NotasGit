@@ -79,5 +79,34 @@
     
     <h3>git branch -D nameBranch</h3>
     <p>Elimina una rama sin importar que se haya o no hecho merge previo.</p>
+
+    <h2>Merging branches</h2>
+    <h3>git merge nameBranch</h3>
+    <p>Combina los cambios de otra rama en la rama actual</p>
+    <h3>git merge --continue</h3>
+    <p>Despues de resolver un conflicto de merge, permite continuar con el proceso.</p>
+    <h3>git merge --abort</h3>
+    <p>Cancela una fusion con conflictos antes de completarla.</p>
+    <h3>git rebase nameBranch</h3>
+    <p>Replica los commits de la rama actual sobre la rama indicada.</p>
+    <h3>git rebase --continue</h3>
+    <p>Despues de resolvcer un conflicto de reabase, permite continuar con el proceso.</p>
+    <h3>git rebase --abort</h3>
+    <p>Cancela el proceso de rebase con conflictos sin resolver.</p>
+    <h3>git rebase -i HEAD~n</h3>
+    <p>Rebase interactivo, permite editar combinar, reordenar y rebase, menteniendo un historial lineal.</p>
+    
+    <h2>Remote repository</h2>
+    <h3>git remote add origin repositoryURL</h3>
+    <p>Agrega un repositorio remoto.</p>
+    <h3>git push origin main</h3>
+    <p>Envia los cambios al repositorio remoto.</p>
+    <h3>git pull origin main</h3>
+    <p>Descarga los cambios en el remoto y los fusiona con la rama indicada.</p>
+    <h3>git fetch origin nameBranch</h3>
+    <p>Descarga los cambios a la rama remota indicada sin realizar el merge con la rama local.</p>
+    <h3>git remote remove origin</h3> 
+    <p>Elimina el repositorio remoto.</p>
+    
 </body>
 </html>
