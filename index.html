@@ -4,80 +4,158 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 <body>
     
     <head> 
         <title> Curso Git</title>
     </head>
+    <div class="bg-primary p-3 row-cols-1">
+    <h1 class="text-bg-primary">Git</h1>
+    <div class="card mx-auto m-3" style="width: 98%">
+        <div class="card-header bg-primary-subtle p-3"><h2>Core concepts</h2></div>
+        <div class="card-body">
+            <h3 class="card-title">working directory</h3>
+            <p class="card-text">Es la carpeta del proyecto donde el usuario edita directamente los archivos</p>
+            
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Contiene los archivos locales</li>
+                <li class="list-group-item">Git detecta los cambios (modificaciones, archivos nuevos o eliminados)</li>
+                <li class="list-group-item">No esta en el historial hasta que se realiza un <code>add</code> o un <code>commit</code></li>
+                
+            </ul>
+        </div>
+        <div class="card-body"> 
+            <h3 class="card-title">staging area</h3>
+            
+                <p class="card-text">Es una lista temporal donde Git ubica los cambios que se quieren incluir en el proximo commit</p>
 
-    <h1>Git</h1>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">No se guardan los cambios, solo se preparan</li>
+                    <li class="list-group-item">Permite hacer commits selectivos</li>
+                    <li class="list-group-item">Se usa el comando <code> git add [nombre_de_archivo]</code></li>
+                    
+                </ul>
+        </div>
+        <div class="card-body">
+            <div class="card-title"><h3>repository</h3></div>
+            <p class="card-text">Es donde Git almacena el historial de versiones del proyecto</p>
 
-    <h2>Core concepts</h2>
-    <h3>working directory</h3>
-    <p>Es la carpeta del proyecto donde el usuario edita directamente los archivos</p>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">Se crea con <code>git init</code> (de manera local) o <code>git clone</code> (desde remoto)</li>
+                <li class="list-group-item">Guarda todos los commits</li>
+                <li class="list-group-item">Se puede conectar a un repositorio remoto</li>
+            </ul>
+        </div>
+    </div>
+    <div class="card mx-auto m-3" style="width: 98%">
+        <div class="card-header bg-primary-subtle p-3"><h2>Essencial Commands</h2></div>
+        <div class="card-body">
+            <h3 class="card-title">git init</h3>
+            <p class="card-text">Inicializa un nuevo repositorio Git en la carpeta del proyecto.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git status</h3>
+            <p class="card-text">Muestra el estado actual del repositorio.</p>
+        </div> 
+        <div class="card-body"> 
+            <h3 class="card-title">git add archivo.txt</h3>
+            <p class="card-text">Prepara los archivos para ser parte del proximo commit, los agrega al staging area.</p>
+        </div>
+        <div class="card-body">    
+            <h3 class="card-title">git commit -m "message"</h3>
+            <p>Guarda los cambios preparados con un mensaje descriptivo.</p>
+        </div>
+        <div class="card-body"> 
+            <h3 class="card-title">git diff</h3>
+            <p class="card-text">Muestra las diferencias entre los cambios en el working directory comparados con lo del ultimo commit.</p>
+        </div>
+        <div class="card-body"> 
+            <h3 class="card-title">git diff --cached</h3>
+            <p class="card-text">Muestra las diferencias entre los archivos del staging area y el ultimo commit.</p>
+        </div>
+        <div class="card-body"> 
+            <h3 class="card-title">git restore</h3>
+            <p class="card-text">Deshace los cambios en archivos individuales.</p>
+        </div>
+        <div class="card-body">    
+            <h3 class="card-title">git reset</h3>
+            <p class="card-text">Mueve la rama actualr (HEAD) a otro commit.</p>
+        </div>
+            <div class="card-body">     
+            <h3 class="card-title">git revert</h3>
+            <p class="card-text">Crea un nuevo commit que revierte los cambios de un commit anterior sin eliminarlo del historial.</p>
+        </div>
+            <div class="card-body">     
+            <h3 class="card-title">git branch</h3>
+            <p class="card-text">Lista las ramas locales</p>
+        </div>
+        <div class="card-body"> 
+            <h3 class="card-title">git switch -c nameBranch</h3>
+            <p class="card-text">Crea y cambia a una nueva rama con el nombre nameBranch.</p>
+        </div>
+        <div class="card-body">     
+            <h3 class="card-title">git branch -D nameBranch</h3>
+            <p class="card-text">Elimina una rama sin importar que se haya o no hecho merge previo.</p>
+        </div>
+    </div>
+    <div class="card mx-auto m-3" style="width: 98%">
+        <div class="card-header bg-primary-subtle p-3"><h2>Merging branches</h2></div>
+        <div class="card-body">
+            <h3 class="card-title">git merge nameBranch</h3>
+            <p class="card-text">Combina los cambios de otra rama en la rama actual</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git merge --continue</h3>
+            <p class="card-text">Despues de resolver un conflicto de merge, permite continuar con el proceso.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git merge --abort</h3>
+            <p class="card-text">Cancela una fusion con conflictos antes de completarla.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git rebase nameBranch</h3>
+            <p class="card-text">Replica los commits de la rama actual sobre la rama indicada.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git rebase --continue</h3>
+            <p class="card-text">Despues de resolvcer un conflicto de reabase, permite continuar con el proceso.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git rebase --abort</h3>
+            <p class="card-text">Cancela el proceso de rebase con conflictos sin resolver.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git rebase -i HEAD~n</h3>
+            <p class="card-text">Rebase interactivo, permite editar combinar, reordenar y rebase, menteniendo un historial lineal.</p>
+        </div>
+    </div>
+    <div class="card mx-auto m-3" style="width: 98%">    
+        <div class="card-header bg-primary-subtle p-3"><h2>Remote repository</h2></div>
+        <div class="card-body">
+            <h3 class="card-title">git remote add origin repositoryURL</h3>
+            <p class="card-text">Agrega un repositorio remoto.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git push origin main</h3>
+            <p class="card-text">Envia los cambios al repositorio remoto.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git pull origin main</h3>
+            <p class="card-text">Descarga los cambios en el remoto y los fusiona con la rama indicada.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git fetch origin nameBranch</h3>
+            <p class="card-text">Descarga los cambios a la rama remota indicada sin realizar el merge con la rama local.</p>
+        </div>
+        <div class="card-body">
+            <h3 class="card-title">git remote remove origin</h3> 
+            <p class="card-text">Elimina el repositorio remoto.</p>
+        </div>
+    </div>
+    </div>
 
-    <ul>
-        <li>Contiene los archivos locales</li>
-        <li>Git detecta los cambios (modificaciones, archivos nuevos o eliminados)</li>
-        <li>No esta en el historial hasta que se realiza un <code>add</code> o un <code>commit</code></li>
-        
-    </ul>
-
-    <h3>staging area</h3>
-    <p>Es una lista temporal donde Git ubica los cambios que se quieren incluir en el proximo commit</p>
-
-    <ul>
-        <li>No se guardan los cambios, solo se preparan</li>
-        <li>Permite hacer commits selectivos</li>
-        <li>Se usa el comando <code> git add [nombre_de_archivo]</code></li>
-        
-    </ul>
-
-    <h3>repository</h3>
-    <p>Es donde Git almacena el historial de versiones del proyecto</p>
-
-    <ul>
-        <li>Se crea con <code>git init</code> (de manera local) o <code>git clone</code> (desde remoto)</li>
-        <li>Guarda todos los commits</li>
-        <li>Se puede conectar a un repositorio remoto</li>
-    </ul>
-
-    <h2>Essencial Commands</h2>
-    <h3>git init</h3>
-    <p>Inicializa un nuevo repositorio Git en la carpeta del proyecto.</p>
-
-    <h3>git status</h3>
-    <p>Muestra el estado actual del repositorio.</p>
-    
-    <h3>git add archivo.txt</h3>
-    <p>Prepara los archivos para ser parte del proximo commit, los agrega al staging area.</p>
-    
-    <h3>git commit -m "message"</h3>
-    <p>Guarda los cambios preparados con un mensaje descriptivo.</p>
-
-    <h3>git diff</h3>
-    <p>Muestra las diferencias entre los cambios en el working directory comparados con lo del ultimo commit.</p>
-    
-    <h3>git diff --cached</h3>
-    <p>Muestra las diferencias entre los archivos del staging area y el ultimo commit.</p>
-    
-    <h3>git restore</h3>
-    <p>Deshace los cambios en archivos individuales.</p>
-    
-    <h3>git reset</h3>
-    <p>Mueve la rama actualr (HEAD) a otro commit.</p>
-    
-    <h3>git revert</h3>
-    <p>Crea un nuevo commit que revierte los cambios de un commit anterior sin eliminarlo del historial.</p>
-    
-    <h3>git branch</h3>
-    <p>Lista las ramas locales</p>
-
-    <h3>git switch -c nameBranch</h3>
-    <p>Crea y cambia a una nueva rama con el nombre nameBranch.</p>
-    
-    <h3>git branch -D nameBranch</h3>
-    <p>Elimina una rama sin importar que se haya o no hecho merge previo.</p>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>
 </html>
